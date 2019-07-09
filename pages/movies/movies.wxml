@@ -1,0 +1,29 @@
+<import src='movie-list-template/movie-list-template.wxml' />
+<import src='movie-grid-template/movie-grid-template.wxml' />
+
+<!--  搜索功能 -->
+<view class="search">
+  <icon type="search" size="13" color="#405f80" class="search-img"></icon>
+  <!-- bindconfirm是点击手机上的搜索按钮就会触发的方法 -->
+  <!-- bindblur 是点击手机上的回车或者完成又或者是空白区域触发 -->
+  <input type="text" placeholder="你的名字" placeholder-class="placeholder" bindfocus="onSearchFoucs" bindconfirm="onSearchConfirm"/>
+  <image src="/images/icon/xx.png" class="xx-img" bindtap="onCancelTap"></image>
+</view>
+
+<view class="container" wx:if="{{containerShow}}">
+  <view class="movies-template">
+    <template is="movieListTemplate" data="{{...inTheaters}}"/>
+  </view>
+  <view class="movies-template">
+    <template is="movieListTemplate" data="{{...comingSoon}}"/>
+  </view>
+  <view class="movies-template">
+    <template is="movieListTemplate" data="{{...top250}}"/>
+  </view>
+</view>
+
+<view class="search-panel" wx:if="{{searchPanelShow}}">
+  <template is="movieGridTemplate" data="{{...searchResult}}" />
+</view>
+
+

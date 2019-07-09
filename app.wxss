@@ -1,0 +1,10 @@
+/* // 可以在app.wxss 中设置全局样式 */
+
+text{
+  font-family: MicroSoft yahei;
+  font-size: 24rpx;
+  color: #666;
+}
+input{
+  font-family: MicroSoft Yahei;
+}
